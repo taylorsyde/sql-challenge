@@ -32,7 +32,9 @@ CREATE TABLE employees (
     first_name varchar(50) not null,
 	last_name varchar(50) not null,
 	sex varchar(1),
-	hire_date date not null
+	hire_date date not null,
+    primary key (emp_no),
+    foreign key (title_id) REFERENCES titles (title_id)
 );
 
 CREATE TABLE salaries (
@@ -42,7 +44,8 @@ CREATE TABLE salaries (
 	
 CREATE TABLE titles (
 	title_id varchar(10),
-	title varchar(50)
+	title varchar(50),
+	primary key (title_id)
 );
 
 -- import data
