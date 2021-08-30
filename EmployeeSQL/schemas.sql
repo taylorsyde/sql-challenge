@@ -57,7 +57,7 @@ DROP TABLE IF EXISTS salaries;
 CREATE TABLE salaries (
 	emp_no int not null,
 	salary int not null,
-	primary key (emp_no,),
+	primary key (emp_no),
 	foreign key (emp_no) REFERENCES employees (emp_no)
 );
 SELECT * from salaries;
