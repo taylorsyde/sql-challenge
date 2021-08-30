@@ -1,8 +1,23 @@
 -- list the employee first and last name, sex, and salary
+select employees.first_name, employees.last_name, employees.sex, salaries.salary
+from employees
+join salaries
+on  employees.emp_no = salaries.emp_no;
 
 -- list the first and last name of employees hired in 1986
+select * from employees
+where DATE_PART('year',hire_date) = 1986
 
---List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
+
+select * from departments
+--List the manager of each department with department number, department name, 
+--the manager's employee number, last name, first name.
+select employees.emp_no, employees.first_name, employees.last_name, dept_manager.dept_no, departments.dept_name
+from employees
+join dept_manager
+on  employees.emp_no = dept_manager.emp_no
+join departments
+on dept_manager.dept_no = departments.dept_no;
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
 
